@@ -105,3 +105,48 @@ font-size: 1.5rem;
 .hide {
   display: none;
 }
+
+.sticky {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 150px;
+  width: 200px;
+}
+
+.sticky-header {
+  height: 15%;
+  background: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.sticky-header div {
+  height: 60%;
+  width: 7%;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.minimize {
+  background: blue;
+  cursor: pointer;
+}
+
+.close {
+  background: red;
+  cursor: pointer;
+}
+
+.sticky-content {
+  height: 85%;
+}
+
+textarea{
+  width: 100%;
+  border: 1px solid lightgray;
+  outline: none;
+  padding: 10px;
+  height: 100%;
+}
