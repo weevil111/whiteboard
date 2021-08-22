@@ -122,20 +122,11 @@ font-size: 1.5rem;
   justify-content: flex-end;
 }
 
-.sticky-header div {
+.sticky-header i {
   height: 60%;
   width: 7%;
   border-radius: 50%;
   margin-right: 5px;
-}
-
-.minimize {
-  background: blue;
-  cursor: pointer;
-}
-
-.close {
-  background: red;
   cursor: pointer;
 }
 
@@ -145,8 +136,15 @@ font-size: 1.5rem;
 
 textarea{
   width: 100%;
+  min-width: 150px;
+  min-height: 100px;
   border: 1px solid lightgray;
   outline: none;
   padding: 10px;
   height: 100%;
+}
+
+.image-upload {
+  height: 100%;
+  width: 100%;
 }

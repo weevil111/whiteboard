@@ -1,36 +1,39 @@
 let stickyDiv = document.querySelector("#sticky");
 
-stickyDiv.addEventListener("click", appendSticky);
+stickyDiv.addEventListener("click", ()=> appendSticky());
 
-function appendSticky(){
-  // <div class="sticky">
-    // <div class="sticky-header">
-    //   <div class="minimize">
-
-    //   </div>
-    //   <div class="close">
-
-    //   </div>
-    // </div>
-    // <div class="sticky-content">
-    //   <textarea name="" id="" cols="30" rows="10"></textarea>
-    // </div>
-  // </div>
+function appendSticky(elem){
   let sticky = document.createElement("div");
   sticky.classList.add("sticky");
-  sticky.innerHTML = `
-    <div class="sticky-header">
-      <div class="minimize">
-
+  if(elem){
+    sticky.innerHTML = `
+      <div class="sticky-header">
+        <i class="fa fa-minus-square-o minimize" style="color: #2980b9">
+        </i>
+        <i class="fa fa-times-circle close" style="color: #e55039">
+        </i>
       </div>
-      <div class="close">
-
+      <div class="sticky-content">
       </div>
-    </div>
-    <div class="sticky-content">
-      <textarea name="" id="" cols="30" rows="10"></textarea>
-    </div>
-  `;
+    `;
+    sticky.querySelector(".sticky-content").append(elem);
+  }else{
+    sticky.innerHTML = `
+      <div class="sticky-header">
+        <i class="fa fa-minus-square-o minimize" style="color: #2980b9">
+        </i>
+        <i class="fa fa-times-circle close" style="color: #e55039">
+        </i>
+      </div>
+      <div class="sticky-content">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+      </div>
+    `;
+    // Make textarea resize event make the entire sticky window resize
+    sticky.querySelector("textarea").addEventListener("mousemove", function(e){
+      sticky.style.width = window.getComputedStyle(e.target).width;
+    })
+  }
 
   sticky.querySelector(".minimize").addEventListener("click", function(){
     let stickyContent = sticky.querySelector(".sticky-content");
@@ -41,6 +44,34 @@ function appendSticky(){
     sticky.remove();
   })
 
+  let stickyHeader = sticky.querySelector(".sticky-header");
+  let isStickyHold = false;
+  let initialX,initialY;
+  stickyHeader.addEventListener("mousedown", function(e){
+    isStickyHold = true;
+    initialX = e.clientX;
+    initialY = e.clientY;
+  })
+  stickyHeader.addEventListener("mousemove", function(e){
+    if(isStickyHold){
+      let finalX = e.clientX;
+      let finalY = e.clientY;
 
+      let dx = finalX - initialX;
+      let dy = finalY - initialY;
+
+      // set top and left of stikcy
+      // getBoundingClient => we can only retrieve top and left
+      let {top, left} = sticky.getBoundingClientRect();
+      sticky.style.top = `${top + dy}px`;
+      sticky.style.left = `${left + dx}px`;
+      initialX = finalX;
+      initialY = finalY;
+    }
+  })
+  stickyHeader.addEventListener("mouseup", function(){
+    isStickyHold = false;
+  })
+  
   document.querySelector("body").append(sticky);
 }
