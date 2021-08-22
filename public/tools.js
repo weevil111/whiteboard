@@ -65,6 +65,8 @@ eraser.addEventListener("click", function(){
 
 function refreshContextProperties() {
   ctx.lineCap = "round";
+  ctx.fillStyle = "white";
+  ctx.fillRect(0,0,canvas.width, canvas.height);
   if(activeTool == PENCIL){
     ctx.strokeStyle = currentPencilColor;
     ctx.lineWidth = currentPencilSize;

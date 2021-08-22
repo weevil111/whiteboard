@@ -27,7 +27,9 @@ tools.addEventListener("click", function(e) {
 
 /** @type {CanvasRenderingContext2D} */
 let ctx = canvas.getContext("2d");
-ctx.lineCap = "round"
+ctx.lineCap = "round";
+ctx.fillStyle = "white";
+ctx.fillRect(0,0,canvas.width, canvas.height);
 
 let db = [];
 let redoDB = [];
