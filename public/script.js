@@ -13,19 +13,19 @@ window.addEventListener("resize", function() {
 let tools = document.querySelector(".tools");
 tools.addEventListener("click", function(e) {
   let tag = e.target;
-  console.log(tag.tagName);
   if (tag.tagName === "I"){
-    const allTools = document.querySelectorAll(".tool")
-    allTools.forEach(tool => {
-      tool.classList.remove("tool-active");
+    const allIcons = document.querySelectorAll(".icon-active")
+    allIcons.forEach(icon => {
+      icon.classList.remove("icon-active");
     })
-    tag.parentElement.classList.add("tool-active")
+    tag.parentElement.classList.add("icon-active")
   }
 })
 
 
 /** @type {CanvasRenderingContext2D} */
 let ctx = canvas.getContext("2d");
+ctx.lineCap = "round"
 
 let isMouseDown = false;
 

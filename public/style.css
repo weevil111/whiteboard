@@ -20,12 +20,10 @@ justify-content: space-evenly;
 font-size: 1.5rem;
 }
 .tool {
-  cursor: pointer;
-  border-radius: 50%;
-  transition: transform(0.5s);
+  position: relative;
 }
 
-.tool:hover > i{
+.icon-container:hover > i{
   transform: scale(1.4);
 }
 
@@ -33,17 +31,73 @@ font-size: 1.5rem;
   transform: rotateY(180deg);
 }
 
-.tool-active{
+.icon-container{
+  border-radius: 50%;
+}
+
+.icon-active{
   box-shadow: 0px 0px 15px rgb(0 0 0 / 24%);
 }
 
-.tool i {
+.icon-container i {
   width: fit-content;
-  padding: 16px;
   transition: transform 0.5s;
+  padding: 16px;
+  cursor: pointer;
 }
 
 
 .canvas-content{
   overflow: hidden;
+}
+
+.tool-options{
+  min-height: 100px;
+  min-width: 120px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.pencil-size, .eraser-size{
+  text-align: center;
+}
+.pencil-size input, .eraser-size input {
+  width: 90%;
+}
+.pencil-colors{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.red,.yellow,.blue,.black {
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.red:hover, .yellow:hover,.blue:hover, .black:hover{
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 24%);
+}
+
+.red{
+  background-color: #e84118;
+}
+.yellow{
+  background-color: #fbc531;
+}
+.blue{
+  background-color: #0097e6;
+}
+.black{
+  background-color: #2f3640;
+}
+
+.hide {
+  display: none;
 }

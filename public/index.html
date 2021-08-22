@@ -11,13 +11,57 @@
 <body>
   <div class="tools-content">
     <div class="tools">
-      <div class="tool tool-active" id="pencil"><i class="fa fa-pencil" style="color: #2c3e50;"></i></div>
-      <div class="tool" id="eraser"><i class="fa fa-eraser" style="color: #8e44ad;"></i></div>
-      <div class="tool" id="undo"><i class="fa fa-undo" style="color: #e67e22;"></i></div>
-      <div class="tool" id="redo"><i class="fa fa-undo" style="color: #27ae60;"></i></div>
-      <div class="tool" id="sticky"><i class="fa fa-sticky-note" style="color: #f1c40f;"></i></div>
-      <div class="tool" id="photo"><i class="fa fa-picture-o" style="color: #d35400;"></i></div>
-      <div class="tool" id="download"><i class="fa fa-download" style="color: #16a085;"></i></div>
+      <div class="tool" id="pencil">
+        <div class="icon-container icon-active">
+          <i class="fa fa-pencil" style="color: #2c3e50;"></i>
+        </div>
+        <div class="tool-options hide">
+          <div class="pencil-size">
+            <input type="range" value="1" min="1" max="40">
+          </div>
+          <div class="pencil-colors">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="blue"></span>
+            <span class="black"></span>
+          </div>
+        </div>
+      </div>
+      <div class="tool" id="eraser">
+        <div class="icon-container">
+          <i class="fa fa-eraser" style="color: #8e44ad;"></i>
+        </div>
+        <div class="tool-options hide">
+          <div class="eraser-size">
+            <input type="range" value="1" min="1" max="40">
+          </div>
+        </div>
+      </div>
+      <div class="tool" id="undo">
+        <div class="icon-container">
+          <i class="fa fa-undo" style="color: #e67e22;"></i>
+        </div>
+      </div>
+      <div class="tool" id="redo">
+        <div class="icon-container">
+          <i class="fa fa-undo" style="color: #27ae60;"></i>
+        </div>
+      </div>
+      <div class="tool" id="sticky">
+        <div class="icon-container">
+          <i class="fa fa-sticky-note" style="color: #f1c40f;"></i>
+        </div>
+      </div>
+      <div class="tool" id="photo">
+        <div class="icon-container">
+          <i class="fa fa-picture-o" style="color: #d35400;"></i>
+        </div>
+      </div>
+      <div class="tool" id="download">
+        <div class="icon-container">
+          <i class="fa fa-download" style="color: #16a085;"></i>
+        </div>
+      </div>
     </div>
   </div>
   <div class="canvas-content">
