@@ -10,6 +10,20 @@ window.addEventListener("resize", function() {
   canvas.height = window.innerHeight - canvasTop;
 })
 
+let tools = document.querySelector(".tools");
+tools.addEventListener("click", function(e) {
+  let tag = e.target;
+  console.log(tag.tagName);
+  if (tag.tagName === "I"){
+    const allTools = document.querySelectorAll(".tool")
+    allTools.forEach(tool => {
+      tool.classList.remove("tool-active");
+    })
+    tag.parentElement.classList.add("tool-active")
+  }
+})
+
+
 /** @type {CanvasRenderingContext2D} */
 let ctx = canvas.getContext("2d");
 
