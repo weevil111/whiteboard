@@ -1,4 +1,5 @@
 let photo = document.querySelector("#photo > div");
+let download = document.querySelector("#download > div");
 let photoInput = document.querySelector("#photo-upload");
 photo.addEventListener("click", function(){
   photoInput.click();
@@ -12,3 +13,11 @@ photoInput.addEventListener("change", function(e){
   img.classList.add("image-upload")
   appendSticky(img);
 });
+
+download.addEventListener("click", function(){
+  let canvasUrl = canvas.toDataURL({type: "image/png"});
+  let aTag = document.createElement("a");
+  aTag.download = "drawing.jpg";
+  aTag.href = canvasUrl;
+  aTag.click();
+})

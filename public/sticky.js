@@ -8,9 +8,9 @@ function appendSticky(elem){
   if(elem){
     sticky.innerHTML = `
       <div class="sticky-header">
-        <i class="fa fa-minus-square-o minimize" style="color: #2980b9">
+        <i class="fa fa-minus-square-o minimize">
         </i>
-        <i class="fa fa-times-circle close" style="color: #e55039">
+        <i class="fa fa-times-circle close">
         </i>
       </div>
       <div class="sticky-content">
@@ -20,9 +20,9 @@ function appendSticky(elem){
   }else{
     sticky.innerHTML = `
       <div class="sticky-header">
-        <i class="fa fa-minus-square-o minimize" style="color: #2980b9">
+        <i class="fa fa-minus-square-o minimize">
         </i>
-        <i class="fa fa-times-circle close" style="color: #e55039">
+        <i class="fa fa-times-circle close">
         </i>
       </div>
       <div class="sticky-content">
