@@ -31,6 +31,10 @@ font-size: 1.5rem;
   transform: rotateY(180deg);
 }
 
+.disabled {
+  opacity: 0.3;
+}
+
 .icon-container{
   border-radius: 50%;
 }

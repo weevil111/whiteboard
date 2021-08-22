@@ -40,7 +40,7 @@ pencil.addEventListener("click" , function() {
       pencilOptions.classList.add("hide");
     }
   }else{
-    activeTool = "pencil";
+    activeTool = PENCIL;
     ctx.strokeStyle = currentPencilColor;
     ctx.lineWidth = currentPencilSize;
     eraserOptions.classList.add("hide")
@@ -56,9 +56,20 @@ eraser.addEventListener("click", function(){
       eraserOptions.classList.add("hide");
     }
   }else {
-    activeTool = "eraser";
+    activeTool = ERASER;
     ctx.strokeStyle = "white";
     ctx.lineWidth = currentEraserSize;
     pencilOptions.classList.add("hide");
   }
 })
+
+function refreshContextProperties() {
+  ctx.lineCap = "round";
+  if(activeTool == PENCIL){
+    ctx.strokeStyle = currentPencilColor;
+    ctx.lineWidth = currentPencilSize;
+  }else {
+    ctx.strokeStyle = "white";
+    ctx.lineWidth = currentEraserSize;
+  }
+}
